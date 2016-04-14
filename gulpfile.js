@@ -14,6 +14,8 @@ var vendorFiles = [
 
 gulp.task('build', function () {
     gulp.src([].concat(vendorFiles, srcFiles))
+        .pipe(concat('helper.js'))
+        .pipe(gulp.dest('dist'))
         .pipe(uglyfly())
         .pipe(concat('helper.min.js'))
         .pipe(gulp.dest('dist'))
