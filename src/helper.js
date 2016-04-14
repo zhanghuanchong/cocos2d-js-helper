@@ -1,10 +1,13 @@
 var Cocos2dJsHelper = cc.Class.extend({
     // collision types
-    COLLISION_SUCCESS: 1000,
+    COLLISION_SUCCESS: 10000,
 
     // events
     EVENT_DIE: 'EVENT_DIE',
     EVENT_PASS_LEVEL: 'EVENT_PASS_LEVEL',
+    EVENT_PLAY: 'play',
+    EVENT_GAME_OVER: 'game_over',
+    EVENT_WIN_SCORE: 'win_score',
 
     // obstacle types
 
@@ -17,6 +20,13 @@ var Cocos2dJsHelper = cc.Class.extend({
     CONFIG_DEBUG: 'debug',
     CONFIG_MAX_CHAPTER: 'max_chapter',
     CONFIG_MAX_LEVEL: 'max_level',
+    CONFIG_BEST_SCORE: 'best_score',
+    configDefaults: {
+        best_score : {
+            invalid: null,
+            default: 0
+        }
+    },
 
     // constants
     SCENE_DURATION: 1,
@@ -25,6 +35,7 @@ var Cocos2dJsHelper = cc.Class.extend({
     // variables
     center: null,
     space: null, // Chipmunk space object
+    score: 0,
     currentChapter: -1,
     currentLevel: -1,
 
@@ -33,6 +44,16 @@ var Cocos2dJsHelper = cc.Class.extend({
         this.center = cc.p(size.width * 0.5, size.height * 0.5);
         this.currentChapter = this.configMaxChapter();
         this.currentLevel = this.configMaxLevel();
+
+        _.forEach(this.configDefaults, function (v, k) {
+            var cv = this.config(k);
+            if (cv === v.invalid) {
+                this.config(k, v.default);
+            }
+        });
+    },
+    label: function (text, size) {
+        return new cc.LabelTTF(text, 'Arial', size || 40);
     },
     animate: function (prefix, count, interval, revert) {
         var frames = [],
@@ -55,7 +76,44 @@ var Cocos2dJsHelper = cc.Class.extend({
     addDebugNode: function () {
         this._debugNode = new cc.PhysicsDebugNode(this.space);
         this._debugNode.visible = this.config(this.CONFIG_DEBUG);
-        this.addChild(this._debugNode);
+        this.addChild(this._debugNode, 9999);
+    },
+    logColors: function (colors) {
+        var result = [];
+        _.forEach(colors, function (v, k) {
+            result.push(cc.colorToHex(v));
+        });
+        cc.log(result);
+
+        return result;
+    },
+    cpVerts: function (verts) {
+        var result = [];
+        _.forEach(verts, function (v, k) {
+            result.push(v.x);
+            result.push(v.y);
+        });
+
+        return result;
+    },
+    $v2p: function (v) {
+        return cc.p(
+            v.elements[0],
+            v.elements[1]
+        );
+    },
+    p2$v: function (p) {
+        return $V([
+            p.x,
+            p.y
+        ]);
+    },
+    rotate$v2ps: function (vs, degree, origin) {
+        var result = [];
+        _.forEach(vs, function (v, k) {
+            result.push(util.$v2p(v.rotate(degree, origin)));
+        });
+        return result;
     },
     addBodyToSpace: function (body) {
         if (body.isRogue()) {

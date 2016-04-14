@@ -1,0 +1,29 @@
+{
+  "name": "cocos2d-js-helpers",
+  "description": "Cocos2d-js helper classes/functions.",
+  "main": "index.js",
+  "authors": [
+    "ezburg@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "cocos2d-x",
+    "helper",
+    "js"
+  ],
+  "homepage": "https://github.com/ezburg/cocos2d-js-helper",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.11.1",
+    "sylvester": "^0.1.3"
+  }
+}
