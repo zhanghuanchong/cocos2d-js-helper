@@ -50,7 +50,7 @@ var Cocos2dJsHelper = cc.Class.extend({
             if (cv === v.invalid) {
                 this.config(k, v.default);
             }
-        });
+        }.bind(this));
     },
     label: function (text, size) {
         return new cc.LabelTTF(text, 'Arial', size || 40);

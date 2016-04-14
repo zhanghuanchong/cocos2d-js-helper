@@ -27,6 +27,10 @@ gulp.task('doc', function (cb) {
         .pipe(jsdoc(config, cb));
 });
 
+gulp.task('watch', function () {
+    gulp.watch(srcFiles, ['build']);
+});
+
 gulp.task('default', ['build'], function() {
 
 });
