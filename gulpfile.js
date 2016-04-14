@@ -3,14 +3,17 @@ var uglyfly = require('gulp-uglyfly');
 var concat = require('gulp-concat');
 var jsdoc = require('gulp-jsdoc3');
 
-var jsFiles = [
-    'bower_components/lodash/dist/lodash.min.js',
-    'bower_components/sylvester/sylvester.js',
+var srcFiles = [
     'src/helper.js'
 ];
 
+var vendorFiles = [
+    'bower_components/lodash/dist/lodash.min.js',
+    'bower_components/sylvester/sylvester.js'
+];
+
 gulp.task('build', function () {
-    gulp.src(jsFiles)
+    gulp.src([].concat(vendorFiles, srcFiles))
         .pipe(uglyfly())
         .pipe(concat('helper.min.js'))
         .pipe(gulp.dest('dist'))
@@ -18,7 +21,7 @@ gulp.task('build', function () {
 
 gulp.task('doc', function (cb) {
     var config = require('./jsdoc.json');
-    gulp.src(['README.md'].concat(jsFiles), {read: false})
+    gulp.src(['README.md'].concat(srcFiles), {read: false})
         .pipe(jsdoc(config, cb));
 });
 
