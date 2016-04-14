@@ -1,0 +1,27 @@
+{
+  "name": "cocos2d-js-helpers",
+  "version": "1.0.0",
+  "description": "Cocos2d-js helper classes/functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezburg/cocos2d-js-helper.git"
+  },
+  "keywords": [
+    "cocos2d-x",
+    "helper",
+    "js"
+  ],
+  "author": "ezburg@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezburg/cocos2d-js-helper/issues"
+  },
+  "homepage": "https://github.com/ezburg/cocos2d-js-helper#readme",
+  "dependencies": {
+    "jsdoc": "^3.4.0"
+  }
+}
