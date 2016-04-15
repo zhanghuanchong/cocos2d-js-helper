@@ -39,6 +39,7 @@ var Cocos2dJsHelper = cc.Class.extend({
     currentChapter: -1,
     currentLevel: -1,
 
+    // functions
     init: function () {
         var size = cc.winSize;
         this.center = cc.p(size.width * 0.5, size.height * 0.5);

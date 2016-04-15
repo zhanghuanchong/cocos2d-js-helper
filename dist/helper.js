@@ -199,10 +199,10 @@ var Cocos2dJsHelper = cc.Class.extend({
         var ani = new cc.Animation(frames, interval);
         return cc.animate(ani);
     },
-    addDebugNode: function () {
-        this._debugNode = new cc.PhysicsDebugNode(this.space);
-        this._debugNode.visible = this.config(this.CONFIG_DEBUG);
-        this.addChild(this._debugNode, 9999);
+    addDebugNode: function (parentNode) {
+        parentNode._debugNode = new cc.PhysicsDebugNode(this.space);
+        parentNode._debugNode.visible = this.config(this.CONFIG_DEBUG);
+        parentNode.addChild(parentNode._debugNode, 9999);
     },
     logColors: function (colors) {
         var result = [];
