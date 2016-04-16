@@ -152,6 +152,11 @@ var Cocos2dJsHelper = cc.Class.extend({
 
         return label;
     },
+    /**
+     * Get or set the configuration.
+     * @param {string} k Configuration key
+     * @param {string|number|object|boolean|undefined} [v] Set the configuration when v is given
+     */
     config: function (k, v) {
         if (cc.sys.isNative) {
             var dir = jsb.fileUtils.getWritablePath();
