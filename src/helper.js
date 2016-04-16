@@ -1,3 +1,8 @@
+/**
+ * Cocos2dJsHelper
+ *
+ * @type {Function}
+ */
 var Cocos2dJsHelper = cc.Class.extend({
     // collision types
     COLLISION_SUCCESS: 10000,
@@ -40,6 +45,9 @@ var Cocos2dJsHelper = cc.Class.extend({
     currentLevel: -1,
 
     // functions
+    /**
+     * Initialize some variables. Need to be called on game start.
+     */
     init: function () {
         var size = cc.winSize;
         this.center = cc.p(size.width * 0.5, size.height * 0.5);
@@ -56,6 +64,14 @@ var Cocos2dJsHelper = cc.Class.extend({
     label: function (text, size) {
         return new cc.LabelTTF(text, 'Arial', size || 40);
     },
+    /**
+     * Create framed animation with similar file name.
+     * @param prefix File name prefix
+     * @param count File name's number suffix starts from 1, and ends with this value
+     * @param interval Frame interval
+     * @param revert Whether revert the animation framed.
+     * @returns {cc.Animate}
+     */
     animate: function (prefix, count, interval, revert) {
         var frames = [],
             i = 0,
