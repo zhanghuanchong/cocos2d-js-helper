@@ -1,9 +1,16 @@
 /**
  * Cocos2dJsHelper
  *
- * @type {Function}
+ * @class
+ * @extends cc.Class
+ *
+ * @property {cc.Point} center - Scene center
+ * @property {cp.Space} space - Chipmunk space object
+ * @property {number} score - Current score
+ * @property {number} currentChapter - Current chapter
+ * @property {number} currentLevel - Current level
  */
-var Cocos2dJsHelper = cc.Class.extend({
+var Cocos2dJsHelper = cc.Class.extend(/** @lends Cocos2dJsHelper# */{
     // collision types
     COLLISION_SUCCESS: 10000,
 
@@ -47,6 +54,7 @@ var Cocos2dJsHelper = cc.Class.extend({
     // functions
     /**
      * Initialize some variables. Need to be called on game start.
+     * @function
      */
     init: function () {
         var size = cc.winSize;
@@ -66,6 +74,7 @@ var Cocos2dJsHelper = cc.Class.extend({
     },
     /**
      * Create framed animation with similar file name.
+     * @function
      * @param prefix File name prefix
      * @param count File name's number suffix starts from 1, and ends with this value
      * @param interval Frame interval
