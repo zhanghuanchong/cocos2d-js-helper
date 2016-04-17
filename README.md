@@ -3,9 +3,30 @@ Cocos2d-js helper classes/functions.
 
 Note: Developing with **Cocos2d-x 3.10**.
 
+Download
+===
+* Download the dist/helper.js or dist/helper.min.js
+* Use bower(Coming soon).
+
+Install
+===
+Sample definition:
+```javascript
+var util = new (Cocos2dJsHelper.extend({
+    // More properties
+
+    // More methods
+}))();
+```
+
+Sample usage:
+```javascript
+util.config(util.CONFIG_DEBUG, true);
+```
+
 Document
 ===
-I will use jsdoc to generate the document.
+[https://github.com/ezburg/cocos2d-js-helper](https://github.com/ezburg/cocos2d-js-helper)
 
 Contributing
 ===
