@@ -26,7 +26,7 @@ util.config(util.CONFIG_DEBUG, true);
 
 Document
 ===
-[https://github.com/ezburg/cocos2d-js-helper](https://github.com/ezburg/cocos2d-js-helper)
+[http://ezburg.github.io/cocos2d-js-helper](http://ezburg.github.io/cocos2d-js-helper)
 
 Contributing
 ===
