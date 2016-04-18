@@ -149,6 +149,12 @@ var Cocos2dJsHelper = cc.Class.extend(/** @lends Cocos2dJsHelper# */{
             }.bind(this));
         }
     },
+    /**
+     * Return label with shadow.
+     * @param {string} text The label content
+     * @param {number} size Label point size
+     * @returns {cc.LabelTTF}
+     */
     shadowLabel: function (text, size) {
         var label = new cc.LabelTTF(text, null, size);
         label.setFontFillColor(cc.color.WHITE);
