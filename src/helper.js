@@ -1,4 +1,16 @@
-var Cocos2dJsHelper = cc.Class.extend({
+/**
+ * Cocos2dJsHelper
+ *
+ * @class
+ * @extends cc.Class
+ *
+ * @property {cc.Point} center - Scene center
+ * @property {cp.Space} space - Chipmunk space object
+ * @property {number} score - Current score
+ * @property {number} currentChapter - Current chapter
+ * @property {number} currentLevel - Current level
+ */
+var Cocos2dJsHelper = cc.Class.extend(/** @lends Cocos2dJsHelper# */{
     // collision types
     COLLISION_SUCCESS: 10000,
 
@@ -40,6 +52,10 @@ var Cocos2dJsHelper = cc.Class.extend({
     currentLevel: -1,
 
     // functions
+    /**
+     * Initialize some variables. Need to be called on game start.
+     * @function
+     */
     init: function () {
         var size = cc.winSize;
         this.center = cc.p(size.width * 0.5, size.height * 0.5);
@@ -56,6 +72,15 @@ var Cocos2dJsHelper = cc.Class.extend({
     label: function (text, size) {
         return new cc.LabelTTF(text, 'Arial', size || 40);
     },
+    /**
+     * Create framed animation with similar file name.
+     * @function
+     * @param prefix File name prefix
+     * @param count File name's number suffix starts from 1, and ends with this value
+     * @param interval Frame interval
+     * @param revert Whether revert the animation framed.
+     * @returns {cc.Animate}
+     */
     animate: function (prefix, count, interval, revert) {
         var frames = [],
             i = 0,
@@ -124,6 +149,12 @@ var Cocos2dJsHelper = cc.Class.extend({
             }.bind(this));
         }
     },
+    /**
+     * Return label with shadow.
+     * @param {string} text The label content
+     * @param {number} size Label point size
+     * @returns {cc.LabelTTF}
+     */
     shadowLabel: function (text, size) {
         var label = new cc.LabelTTF(text, null, size);
         label.setFontFillColor(cc.color.WHITE);
@@ -136,6 +167,11 @@ var Cocos2dJsHelper = cc.Class.extend({
 
         return label;
     },
+    /**
+     * Get or set the configuration.
+     * @param {string} k Configuration key
+     * @param {string|number|object|boolean|undefined} [v] Set the configuration when v is given
+     */
     config: function (k, v) {
         if (cc.sys.isNative) {
             var dir = jsb.fileUtils.getWritablePath();
