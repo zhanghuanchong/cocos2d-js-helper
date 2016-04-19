@@ -354,6 +354,9 @@ var Cocos2dJsHelper = cc.Class.extend(/** @lends Cocos2dJsHelper# */{
         if (_level < level) {
             this.config(this.CONFIG_MAX_LEVEL, level);
         }
+
+        this.currentChapter = this.configMaxChapter();
+        this.currentLevel = this.configMaxLevel();
     },
     nextChapterAndLevel: function () {
         var levels = this.levelData[this.currentChapter].levels;
