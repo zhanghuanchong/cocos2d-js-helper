@@ -250,7 +250,7 @@ var Cocos2dJsHelper = cc.Class.extend(/** @lends Cocos2dJsHelper# */{
     increaseLevel: function () {
         var next = this.nextChapterAndLevel();
         if (next.chapter != this.currentChapter || next.level != this.currentLevel) {
-            this.saveLevel();
+            this.saveLevel(next.chapter, next.level);
             return true;
         }
         return false;

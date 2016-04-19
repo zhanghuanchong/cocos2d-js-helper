@@ -28,9 +28,9 @@ gulp.task('doc', function (cb) {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(srcFiles, ['build']);
+    gulp.watch(srcFiles, ['default']);
 });
 
-gulp.task('default', ['build'], function() {
+gulp.task('default', ['build', 'doc'], function() {
 
 });
