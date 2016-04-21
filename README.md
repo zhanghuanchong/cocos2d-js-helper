@@ -7,7 +7,10 @@ Download
 ===
 Choose one of following methods:
 * Download the dist/helper.js or dist/helper.min.js
-* Use bower(Coming soon).
+* Use bower
+```bash
+    $ bower install cocos2d-js-helper
+```
 * Use git submodule
 ```bash
     $ git submodule add https://github.com/zhanghuanchong/cocos2d-js-helper.git vendor/helpers
