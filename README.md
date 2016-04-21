@@ -5,17 +5,18 @@ Note: Developing with **Cocos2d-x 3.10**.
 
 Download
 ===
+Choose one of following methods:
 * Download the dist/helper.js or dist/helper.min.js
 * Use bower(Coming soon).
 * Use git submodule
-
+```bash
     $ git submodule add https://github.com/zhanghuanchong/cocos2d-js-helper.git vendor/helpers
     $ cd vendor/helpers
     $ npm install
     $ bower install
     $ gulp build
-    
-Then you will find the compiled helper.js and helper.min.js in the folder src/vendor/helpers. Include them and enjoy!
+```
+Then you will find the compiled helper.js and helper.min.js in the folder **src/vendor/helpers**. Include them and enjoy!
 
 Install
 ===
