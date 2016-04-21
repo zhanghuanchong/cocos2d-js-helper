@@ -1,9 +1,9 @@
 {
-  "name": "cocos2d-js-helpers",
+  "name": "cocos2d-js-helper",
   "description": "Cocos2d-js helper classes/functions.",
-  "main": "index.js",
+  "main": "helper.js",
   "authors": [
-    "ezburg@gmail.com"
+    "devwingcom@gmail.com"
   ],
   "license": "MIT",
   "keywords": [
