@@ -5,6 +5,7 @@ Note: Developing with **Cocos2d-x 3.10**.
 
 Download
 ===
+Choose one of following methods:
 * Download the dist/helper.js or dist/helper.min.js
 * Use bower(Coming soon).
 * Use git submodule
