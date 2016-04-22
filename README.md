@@ -37,6 +37,11 @@ Sample usage:
 util.config(util.CONFIG_DEBUG, true);
 ```
 
+Dependencies
+===
+* [lodash](https://lodash.com/): a modern JavaScript utility library delivering modularity, performance, & extras.
+* [sylvester](http://sylvester.jcoglan.com/): a vector, matrix and geometry library for JavaScript.
+
 Document
 ===
 [http://zhanghuanchong.github.io/cocos2d-js-helper](http://zhanghuanchong.github.io/cocos2d-js-helper)
