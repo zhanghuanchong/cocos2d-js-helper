@@ -7,9 +7,13 @@ Download
 ===
 Choose one of following methods:
 * Download the dist/helper.js or dist/helper.min.js
+* Use npm
+```bash
+    $ npm i cocos2d-js-helpers --save
+```
 * Use bower
 ```bash
-    $ bower install cocos2d-js-helper
+    $ bower install cocos2d-js-helper --save
 ```
 * Use git submodule
 ```bash
