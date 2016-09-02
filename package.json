@@ -1,6 +1,6 @@
 {
   "name": "cocos2d-js-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cocos2d-js helper classes/functions.",
   "main": "dist/helper.min.js",
   "scripts": {
