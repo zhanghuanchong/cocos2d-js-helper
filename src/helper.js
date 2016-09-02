@@ -268,3 +268,16 @@ var Cocos2dJsHelper = cc.Class.extend(/** @lends Cocos2dJsHelper# */{
         return (chapter + 1) + ' - ' + (level + 1);
     }
 });
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = Cocos2dJsHelper;
+} else {
+    if (typeof define === 'function' && define.amd) {
+        define([], function() {
+            return Cocos2dJsHelper;
+        });
+    }
+    else {
+        window.Cocos2dJsHelper = Cocos2dJsHelper;
+    }
+}

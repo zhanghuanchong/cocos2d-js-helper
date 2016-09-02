@@ -12,7 +12,7 @@ var vendorFiles = [
     'bower_components/sylvester/sylvester.js'
 ];
 
-var dest = '../../src/vendor/helpers';
+var dest = 'dist';
 
 gulp.task('build', function () {
     gulp.src([].concat(vendorFiles, srcFiles))
